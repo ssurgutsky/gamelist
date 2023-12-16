@@ -1,41 +1,37 @@
-[START]Приветствуем тебя на нашем игровом портале! (v1.{this.game_version})\nВыбери игру из списка:\n[ANSWERSORDER ON][BGPICTURE logo.jpg]
-	[mark_jq3z9230b0d555d900as]Симуляторы гопника
-		[page1]Стоп Гоп 1
-			[mark_2t4206v2k82o89d5amg2]{title="Симулятор гопника, часть 1"; desc="К тебе подваливает гопарь и начинает трясти деньги"; goal="Задача: вытрясти деньги с него самого"; fb_url="https://apps.facebook.com/stopgop"; vk_url="https://vk.com/app2940600"; history_url="https://vk.com/album-23748098_145963285";bg_image="sg1.swf"}[GOTO game_view]
-				
-					[game_view]{output title+"\n"+desc+"\n"+goal}[BGNDIMAGE black_screen.jpg&{output bg_image}|80;20]
-						[play_vk]Играть ВКонтакте
-							[mark_1c66zgrk1d7m06f7351y][NAVIGATEURL {output vk_url}]
-						[play_fb]Играть здесь
-							[mark_8h0b12g6rh0149d0858h][NAVIGATEURL {output fb_url}]
-						[go_page1]Вернуться обратно[ANSWERIMAGE back.png|5;540]
-							[mark_695al07btrm47db7vg73][GOTO page1]
-
-		[mark_332ckolu4a71h7f92530]Стоп Гоп 2
-			<Enter text here>
-		[mark_t5taaetpmo9yr3hm9wgh]Стоп Гоп 3
-			<Enter text here>
-		[mark_c4ixt0odru7642e1t5ex]Стоп Гоп 4
-			<Enter text here>
-		[mark_4tx3yt740dqh71iefjv7]Стоп Гоп 5
-			<Enter text here>
-		[mark_tey5647xjxfz74a90aai]Стоп Гоп 6
-			<Enter text here>
-	Другие симуляторы
-		[mark_ij949rbu8y609lp1o198]<Enter text here>
-			<Enter text here>
-	[donate]Donate / Дать денежку
-		[mark_8o716rk6f9gm5w4vo191][IMAGE donate.png]Если понравилось, закинь сколько не жалко.
-			[mark_sp1jdvt484lv8vyj27r5]Перевод Tinkoff
-				[mark_f80u11uv548604r8v3v5][NAVIGATEURL https://www.tinkoff.ru/cf/7xIiPBRWF9P]
-					[mark_38qg7331h6950z1d9m0x]
-						[mark_gpz4h2d5q2gj83yqc71b][GOTO START]
-			[mark_n6e7hptv4xsc1s6x56p6]Перевод Qiwi
-				[mark_n4f3t5qf3l1tjoui2c2f][NAVIGATEURL https://qiwi.com/n/SERJIOS]
-					[mark_wk221345eo3g04km4764]
-						[mark_xw21sf4q2mxo3q0x9b78][GOTO START]
-			[mark_pt1rjv2q21z4a2p7is38]Перевод YooMoney
-				[mark_iz89w1lh9902e1966gt6][NAVIGATEURL https://yoomoney.ru/to/41001220674141]
-					[mark_73tm64l7d2xx9kkqws6r]
-						[mark_06z79l0n6q345b2ni5q2][GOTO START]
-	[GOTO go_vk]
+[START]Приветствуем тебя на нашем игровом портале! (v1.{this.game_version})\nВыбери игру из списка:\n[ANSWERSORDER ON][BGPICTURE logo.jpg]{script init.qsp}
+	[mark_jq3z9230b0d555d900as]Симуляторы Гопника
+		[mark_d030989xfx855l63004v]Симуляторы Гопника. Выбери часть.
+			Стоп Гоп 1. Внезапная встреча.
+				[mark_2t4206v2k82o89d5amg2]{this.title="Симулятор гопника, часть 1";this.desc="К тебе подваливает гопарь и начинает трясти деньги";this.goal="Задача: вытрясти деньги с него самого";this.url=this.main_url+"/sg"; this.vk_url="https://vk.com/app2940600";this.bg_image="sg1.jpg";'';}[GOTO game_view]
+					
+						[game_view]{this.title}\n{this.desc}\n{this.goal}[BGNDIMAGE black.jpg&{this.bg_image}|80;20]
+							[play_fb]Играть здесь
+								[mark_8h0b12g6rh0149d0858h][NAVIGATEURL {this.url}]
+									
+										[mark_9jo3p670my4yd7759j1l][GOTO START]
+							[play_vk]Играть ВКонтакте
+								[mark_1c66zgrk1d7m06f7351y][NAVIGATEURL {this.vk_url}]
+									
+										[mark_29q1605w8r3fq17fc9cr][GOTO START]
+							[go_page1]Вернуться обратно
+								[mark_695al07btrm47db7vg73][GOTO START]
+			Стоп Гоп 2. Новы развод. Месть гопа.
+				[mark_4b9l1q436vs3a2i1ec1p]{this.title="Симулятор гопника, часть 2. Новый развод. Месть гопа.";this.desc="На этот раз ты в роли гопника";this.goal="Задача: протрясти изворотливого лоха без суматохи и суеты";this.url=this.main_url+"/sg2"; this.vk_url="https://vk.com/app2940600";this.bg_image="sg2.jpg";'';}[GOTO game_view]
+			Стоп Гоп 3. Полицейская история.
+				[mark_12541qr9hafn3f451996]{this.title="Симулятор гопника 3. Полицейская история.";this.desc="Ты - полицейский, во время патрулирования натыкаешься на двух отморозков и их жертву";this.goal="Задача: ликвидировать всех бандитов и спасти жертву";this.url=this.main_url+"/sg3"; this.vk_url="https://vk.com/app2940600";this.bg_image="sg3.jpg";'';}[GOTO game_view]
+			Стоп Гоп 4. Погоняло.
+				[mark_0hskvu6dtr530ofp82qi]{this.title="Симулятор гопника, часть 4. Погоняло.";this.desc="К тебе подваливает гопарь и предлагает узнать твое рельное погоняло.";this.goal="Задача: вытрясти деньги с него самого";this.url=this.main_url+"/sg4"; this.vk_url="https://vk.com/app2940600";this.bg_image="sg4.jpg";'';}[GOTO game_view]
+			Стоп Гоп 5. Подстава.
+				[mark_feach6865c0d288z4b9i]{this.title="Симулятор гопника, часть 5. Подстава.";this.desc="К тебе подваливает гопарь и говорит, что ты должен денег его корешу из ночного клуба.";this.goal="Задача: разобраться в ситуации.";this.url=this.main_url+"/sg5"; this.vk_url="https://vk.com/app2940600";this.bg_image="sg5.jpg";'';}[GOTO game_view]
+			Стоп Гоп 6
+				[mark_8birow408270z8g0079i]{this.title="Симулятор гопника, часть 6";this.desc="К тебе подваливает гопарь и втюхивает всякое фуфло.";this.goal="Задача: грамотно соскочить с беседы.";this.url=this.main_url+"/sgX"; this.vk_url="https://vk.com/app2940600";this.bg_image="sg6.jpg";'';}[GOTO game_view]
+	Другие игры
+		[mark_4q52x3c0szyjuk092ju7]Выбери из списка:
+			Таксоман
+				[mark_aamu05gqo496f46n58i8]{this.title="Таксоман. Приключения таксиста.";this.desc="Приключения таксиста в родном городе.";this.goal="Задача: пройти все миссии и выплатить кредит.";this.url=this.main_url+"/taxoman"; this.vk_url="https://vk.com/app2940600";this.bg_image="taxoman.jpg";'';}[GOTO game_view]
+			Военкомат
+				[mark_77610bp81p0uv2o3dfqk]{this.title="Военкомат. Откоси от армии.";this.desc="Призыв в армию и способы борьбы с ним.";this.goal="Задача: избежать призыва.";this.url=this.main_url+"/voenkomat"; this.vk_url="https://vk.com/app2940600";this.bg_image="voenkomat.jpg";'';}[GOTO game_view]
+			Алконавты
+				[mark_xm5s37vufo99yv1x5pc9]{this.title="Алконавты.";this.desc="Трое друзей собрались в очередной раз выпить...";this.goal="Задача: весело провести время и нормально добраться домой.";this.url=this.main_url+"/alco"; this.vk_url="https://vk.com/app2940600";this.bg_image="alco.jpg";'';}[GOTO game_view]
+			Холодильник
+				[mark_m22uxwuyhve1nf29r8qd]{this.title="Холодильник.";this.desc="У тебя перегорел холодильник.";this.goal="Задача: купить новый. Но вряд ли у тебя получится это сделать...";this.url=this.main_url+"/fridge"; this.vk_url="https://vk.com/app2940600";this.bg_image="fridge.jpg";'';}[GOTO game_view]
